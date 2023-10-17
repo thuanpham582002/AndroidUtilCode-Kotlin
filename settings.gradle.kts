@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidUtilCode-Kotlin"
 include(":app")
- 
+include(":utils")
