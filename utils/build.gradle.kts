@@ -26,7 +26,7 @@ android {
     }
 
     publishing {
-        singleVariant("release"){
+        singleVariant("release") {
             withSourcesJar()
             withJavadocJar()
         }
@@ -54,3 +54,15 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
 
+
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "dev.no.room113"
+            artifactId = "utils"
+            version = "0.0.1"
+
+            from(components["release"])
+        }
+    }
+}
