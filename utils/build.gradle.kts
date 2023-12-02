@@ -62,7 +62,9 @@ publishing {
             artifactId = "utils"
             version = "0.0.1"
 
-            from(components["release"])
+            afterEvaluate {
+                from(components["release"])
+            }
         }
     }
 }
