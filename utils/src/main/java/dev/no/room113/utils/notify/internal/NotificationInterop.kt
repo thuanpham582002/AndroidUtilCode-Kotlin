@@ -292,7 +292,8 @@ internal object NotificationInterop {
                     .setSummaryText(content.expandedText ?: content.text)
                     // This is the picture below.
                     .bigPicture(content.image)
-                    .bigLargeIcon(null)
+                // todo remove this
+//                    .bigLargeIcon(null)
             }
 
             is Payload.Content.Message -> {
