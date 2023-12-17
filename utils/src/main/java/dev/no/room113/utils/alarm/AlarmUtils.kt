@@ -7,7 +7,8 @@ import android.content.Context
 import androidx.core.app.AlarmManagerCompat
 
 class AlarmUtils internal constructor(private val context: Context) {
-    private lateinit var alarmMgr: AlarmManager
+    private var alarmMgr: AlarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+
     companion object {
         @SuppressLint("StaticFieldLeak")
         lateinit var instance: AlarmUtils
@@ -15,7 +16,6 @@ class AlarmUtils internal constructor(private val context: Context) {
     }
 
     init {
-        alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         instance = this
     }
 

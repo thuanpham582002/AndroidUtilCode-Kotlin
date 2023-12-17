@@ -1,6 +1,7 @@
 package dev.no.room113.utils
 
 import android.app.Application
+import dev.no.room113.utils.preferences.Preferences
 import dev.thuan.utils.alarm.AlarmUtils
 import timber.log.Timber
 import java.util.Timer
@@ -15,8 +16,13 @@ object UtilsCenter {
         this.application = application
         initUtilsPlugin()
         initTimer()
+        initPref(application)
         activityLifecycleCenter = ActivityLifecycleCenter()
         UtilsCenter.application.registerActivityLifecycleCallbacks(activityLifecycleCenter)
+    }
+
+    private fun initPref(application: Application) {
+        Preferences.init(application)
     }
 
     private fun initTimer() {
